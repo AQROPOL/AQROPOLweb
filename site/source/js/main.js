@@ -1,12 +1,23 @@
-
-
-	var rennes = new mapboxgl.LngLat(-1.6742900, 48.1119800);
+	//center coord of the map
+	var rennes = new mapboxgl.LngLat(-1.65, 48.11);
 	
-	mapboxgl.accessToken = 'pk.eyJ1Ijoidm9nYW4iLCJhIjoiY2o4MnQxeWJyMGNteDJxbWk1ODFtYWZsZyJ9.WUlSGrHNVqJtaH1xrHaEHg';
 	
+	//bounds coord of the map
+	var sw = new mapboxgl.LngLat(-1.88,48.02);
+	var ne = new mapboxgl.LngLat(-1.43, 48.20);
+	var rennesBounds = new mapboxgl.LngLatBounds(sw,ne);
+	
+	//token mapBox
+	mapboxgl.accessToken = 'pk.eyJ1IjoicG9zbmljYW50b2luZSIsImEiOiJjajk3MDJuN2swOW9tMzNxcXdvd3lhaDBhIn0.ZNR0Mp71bb6iZQtoawKL0w';
+	
+	
+	//element Map
 	var map = new mapboxgl.Map({
 		center: rennes,
-		zoom: 13,
+		maxBounds: rennesBounds,
+		
 		container: 'map',
-		style: 'mapbox://styles/mapbox/outdoors-v10'
+		style: 'mapbox://styles/mapbox/light-v9'
 	});
+	
+	
