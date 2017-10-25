@@ -16,6 +16,10 @@
 		center: rennes,
 		maxBounds: rennesBounds,
 		
+		doubleClickZoom: true,
+		
+		pitch:40,
+		
 		container: 'map',
 		style: 'mapbox://styles/mapbox/light-v9'
 	});
