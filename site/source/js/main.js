@@ -25,8 +25,8 @@ mapboxgl.accessToken = 'pk.eyJ1IjoicG9zbmljYW50b2luZSIsImEiOiJjajk3MDJuN2swOW9tM
 var rennes = new mapboxgl.LngLat(-1.65, 48.11);
 
 //bounds coord of the map
-var sw = new mapboxgl.LngLat(-1.88,48.02);
-var ne = new mapboxgl.LngLat(-1.43, 48.20);
+var sw = new mapboxgl.LngLat(-1.95,48);
+var ne = new mapboxgl.LngLat(-1.35, 48.1932);
 var rennesBounds = new mapboxgl.LngLatBounds(sw,ne);
 
 initialisationMap();
