@@ -1,21 +1,3 @@
-/**
-//open DB
-var mysql = require('mysql');
-
-var con = mysql.createConnection({
-  host: "localhost",
-  user: "yourusername",
-  password: "yourpassword"
-});
-
-con.connect(function(err) {
-  if (err) throw err;
-  con.query("CREATE DATABASE AQROPOLdb", function (err, result) {
-    if (err) throw err;
-  });
-});
-**/
-
 //alert("creation var");
 
 //token mapBox
