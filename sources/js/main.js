@@ -33,7 +33,8 @@ function initialisationMap(){
 	
 	//alert("map initialisée");
 	
-	mapLayerDot(map);
+	mapLayer(map);
+	mapToggleLayers(map);
 }
 
 

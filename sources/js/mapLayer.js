@@ -1,5 +1,5 @@
 
-function mapLayerDot(map) {
+function mapLayer(map) {
 	/* coordonnées max de la map: 
 	 * 
 	 * float s = (float) -1.84;
@@ -28,8 +28,8 @@ function mapLayerDot(map) {
 
 		});
 		
-		//alert("Source crée");
 		
+		//LAYER measure_dot
 		map.addLayer({
 			"id": "measure_dot",
 			"source": "measure",
@@ -67,7 +67,24 @@ function mapLayerDot(map) {
 				}
 			}
 		});
-		alert("<3");
+		
+		//LAYER 3d_building		
+		map.addLayer({
+			'id': '3d_buildings',
+			'source': 'composite',
+			'source-layer': 'building',
+			'type': 'fill-extrusion',
+			'paint': {
+				'fill-extrusion-color': '#aaaaaa',
+
+				'fill-extrusion-height': 10,
+				'fill-extrusion-base': 0,
+				'fill-extrusion-opacity': .7
+			}
+		});
+       
+       
 	});
+	alert("Layers initialysed");
 	
 }
