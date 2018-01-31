@@ -1,18 +1,22 @@
 
 function mapToggleLayers(map) {
-
+	var	toggleableLayerName = [ 'All Measure', '3D Buildings'];
 	var toggleableLayerIds = [ 'measure_dot', '3d_buildings'];
 
 	for (var i = 0; i < toggleableLayerIds.length; i++) {
 		var id = toggleableLayerIds[i];
-
+		var name = toggleableLayerName[i];
+		
 		var link = document.createElement('a');
+		
 		link.href = '#';
 		link.className = 'active';
-		link.textContent = id;
+		link.id = id;
+		link.textContent = name;
 
 		link.onclick = function (e) {
-			var clickedLayer = this.textContent;
+			
+			var clickedLayer = this.id;
 			e.preventDefault();
 			e.stopPropagation();
 
@@ -26,12 +30,12 @@ function mapToggleLayers(map) {
 				map.setLayoutProperty(clickedLayer, 'visibility', 'visible');
 			}
 		};
-
+		
 		var layers = document.getElementById('menuLayers');
 		layers.appendChild(link);
 	}
 		
-	alert("Layers initialysed");
+	alert("toggle menu initialysed");
 	
 	
 }

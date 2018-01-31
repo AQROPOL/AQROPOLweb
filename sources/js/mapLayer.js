@@ -34,6 +34,9 @@ function mapLayer(map) {
 			"id": "measure_dot",
 			"source": "measure",
 			"type": "circle",
+			'layout': {
+				'visibility': 'visible'
+             },
 			"paint": {
 				"circle-blur" : 0.8,
 				"circle-opacity" : 0.5,
@@ -74,17 +77,21 @@ function mapLayer(map) {
 			'source': 'composite',
 			'source-layer': 'building',
 			'type': 'fill-extrusion',
+			'layout': {
+				'visibility': 'visible'
+            },
 			'paint': {
 				'fill-extrusion-color': '#aaaaaa',
 
 				'fill-extrusion-height': 10,
 				'fill-extrusion-base': 0,
-				'fill-extrusion-opacity': .7
+				'fill-extrusion-opacity': .6
 			}
 		});
        
        
 	});
 	alert("Layers initialysed");
+	
 	
 }

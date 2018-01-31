@@ -28,7 +28,7 @@ function initialisationMap(){
 	pitch:40,
 	
 	container: 'map',
-	style: 'mapbox://styles/mapbox/light-v9'
+	style: 'mapbox://styles/posnicantoine/cjd392dx5440k2rn21njte4jw'
 	});
 	
 	//alert("map initialisée");
