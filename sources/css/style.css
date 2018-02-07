@@ -63,11 +63,11 @@ body {
 
 
 #menuLayers button:hover{
-    opacity: 0.5;
     filter: alpha(opacity=50); /* For IE8 and earlier */
 	background-color: #f8f8f8;
 	color: #404040;
 	transform: translateX(10px);
+	width: 110px;
 	transition: 0.5s;
 }
 
@@ -78,6 +78,5 @@ body {
 }
 
 #menuLayers button.active:hover {
-    opacity: 0.5;
     filter: alpha(opacity=50); /* For IE8 and earlier */
 	background: #d9dbdb;
