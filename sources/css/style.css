@@ -27,43 +27,57 @@ body {
  * 
 */
 #menuLayers {
-	background: #fff;
 	position: absolute;
 	z-index: 1;
 	top: 10px;
-	right: 10px;
-	border-radius: 3px;
+	right: 0px;
 	width: 120px;
-	border: 1px solid rgba(0,0,0,0.4);
 	font-family: 'Open Sans', sans-serif;
 }
 
-#menuLayers a {
-	font-size: 13px;
+#menuLayers button {
+	opacity: 0.4;
+	font-size: 12px;
+	background: #f7f7f7;
+	width: 120px;
+	
+	
+    border-top-left-radius: 25px;
+    border-bottom-left-radius: 25px;
+    border-style: solid;
+    border-width: 1px;
+    box-shadow: 10px 10px 5px grey;
+    
+    outline: none;
+    
 	color: #404040;
+	
 	display: block;
 	margin: 0;
+	margin-top: -1px;
 	padding: 0;
 	padding: 10px;
 	text-decoration: none;
-	border-bottom: 1px solid rgba(0,0,0,0.25);
-	text-align: center;
+	text-align: right;
 }
 
-#menuLayers a:last-child {
-	border: none;
-}
 
-#menuLayers a:hover {
+#menuLayers button:hover{
+    opacity: 0.5;
+    filter: alpha(opacity=50); /* For IE8 and earlier */
 	background-color: #f8f8f8;
 	color: #404040;
+	transform: translateX(10px);
+	transition: 0.5s;
 }
 
-#menuLayers a.active {
-	background-color: #3887be;
-	color: #ffffff;
+#menuLayers button.active {
+    opacity: 0.8;
+    filter: alpha(opacity=50); /* For IE8 and earlier */
+	color: #0b0c0c;
 }
 
-#menuLayers a.active:hover {
-	background: #3074a4;
-}
+#menuLayers button.active:hover {
+    opacity: 0.5;
+    filter: alpha(opacity=50); /* For IE8 and earlier */
+	background: #d9dbdb;

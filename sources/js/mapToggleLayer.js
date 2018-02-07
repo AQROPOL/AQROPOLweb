@@ -7,7 +7,7 @@ function mapToggleLayers(map) {
 		var id = toggleableLayerIds[i];
 		var name = toggleableLayerName[i];
 		
-		var link = document.createElement('a');
+		var link = document.createElement('button');
 		
 		link.href = '#';
 		link.className = 'active';
