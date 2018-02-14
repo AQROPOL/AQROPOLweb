@@ -49,7 +49,7 @@ function mapLayer(map) {
 				
 				"circle-stroke-width" : 0,
 				
-				"circle-radius": 25,
+				"circle-radius": 10,
 				
 				"circle-color": {
 					"property": "value",
@@ -71,6 +71,45 @@ function mapLayer(map) {
 			}
 		});
 		
+		//LAYER Heatmap
+		map.addLayer({
+			"id":"heatmap_dot",
+			"source":"measure",
+			"type":"heatmap",
+			
+			"paint":{
+				// Increase the heatmap weight
+				"heatmap-weight": {
+					property: 'value',
+					type: 'exponential',
+					stops: [
+						[1, 0],
+						[9999, 1]
+					]
+				},
+
+				// Color ramp for heatmap.  Domain is 0 (low) to 1 (high).
+				// Begin color ramp at 0-stop with a 0-transparancy color
+				// to create a blur-like effect.
+				"heatmap-color": [
+					"interpolate",
+					["linear"],
+					["heatmap-density"],
+						0, 'rgba(236,222,239,0)',
+						0.2, 'rgb(208,209,230)',
+						0.4, 'rgb(166,189,219)',
+						0.6, 'rgb(103,169,207)',
+						0.8, 'rgb(28,144,153)'
+				],
+				
+				"heatmap-radius": 50,
+				
+				// Transition from heatmap to circle layer by zoom level
+				"heatmap-opacity":0.9,
+			}
+		});
+		
+		
 		//LAYER 3d_building		
 		map.addLayer({
 			'id': '3d_buildings',
@@ -83,12 +122,11 @@ function mapLayer(map) {
 			'paint': {
 				'fill-extrusion-color': '#aaaaaa',
 
-				'fill-extrusion-height': 10,
+				'fill-extrusion-height':["max", ["get", "height"], 12],
 				'fill-extrusion-base': 0,
 				'fill-extrusion-opacity': .6
 			}
 		});
-       
        
 	});
 	alert("Layers initialysed");
