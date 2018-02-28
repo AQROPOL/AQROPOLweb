@@ -34,6 +34,7 @@ function initialisationMap(){
 	//alert("map initialisée");
 	
 	mapLayer(map);
+	
 	mapToggleLayers(map);
 }
 

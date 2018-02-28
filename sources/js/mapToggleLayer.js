@@ -1,7 +1,7 @@
 
 function mapToggleLayers(map) {
 	var	toggleableLayerName = [ 'All Measure', 'HeatMap', '3D Buildings'];
-	var toggleableLayerIds = [ 'measure_dot', 'heatmap_dot', '3d_buildings'];
+	var toggleableLayerIds = [ 'measure_dot_fines', 'heatmap_dot_fines', '3d_buildings'];
 	var listButton = [];
 
 	for (var i = 0; i < toggleableLayerIds.length; i++) {
@@ -13,6 +13,13 @@ function mapToggleLayers(map) {
 		link.href = '#';
 		link.id = id;
 		link.textContent = name;
+		
+		if(id == toggleableLayerIds[0]){
+			link.className = '';
+		}else{
+			link.className = 'active';
+		}
+		
 
 		link.onclick = function (e) {
 			
@@ -50,17 +57,12 @@ function mapToggleLayers(map) {
 		var layers = document.getElementById('menuLayers');
 		layers.appendChild(link);
 		
-		if(id == toggleableLayerIds[0]){
-			link.className = '';
-			map.setLayoutProperty(link.id, 'visibility', 'none');
-		}else{
-			link.className = 'active';
-		}
 		listButton.push(link);
+		
 		
 	}
 		
-	alert("toggle menu initialysed");
+	//alert("toggle menu initialysed");
 	
 	
 }
