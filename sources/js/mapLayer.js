@@ -72,6 +72,7 @@ function loadMapLayers(geojson, map){
 					"property": 'valeur',
 					"type": "exponential",
 					"stops": [
+						[0000, "rgb(0, 255, 0)"],
 						[1000, "rgb(0, 255, 0)"],
 						[2000, "rgb(97, 255, 0)"],
 						[3000, "rgb(165, 255, 0)"],
@@ -114,6 +115,7 @@ function loadMapLayers(geojson, map){
 					"property": 'valeur',
 					"type": "exponential",
 					"stops": [
+						[0000, "rgb(0, 255, 0)"],
 						[1000, "rgb(0, 255, 0)"],
 						[2000, "rgb(97, 255, 0)"],
 						[3000, "rgb(165, 255, 0)"],

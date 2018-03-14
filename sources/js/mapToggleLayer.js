@@ -38,13 +38,13 @@ function mapToggleLayers(map) {
 			}
 			
 			switch(clickedLayer) {
-				case 'measure_dot':
+				case toggleableLayerIds[0]:
 					map.setLayoutProperty(toggleableLayerIds[1], 'visibility', 'none');
 					if(listButton[1].className === 'active'){
 						listButton[1].className = '';	
 					}
 					break;
-				case 'heatmap_dot':
+				case toggleableLayerIds[1]:
 					map.setLayoutProperty(toggleableLayerIds[0], 'visibility', 'none');
 					if(listButton[0].className === 'active'){
 						listButton[0].className = '';	
