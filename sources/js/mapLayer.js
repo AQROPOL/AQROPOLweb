@@ -2,17 +2,18 @@ function mapLayer(map) {
 	var geojson;
     var xhttp = new XMLHttpRequest();
 
-	xhttp.open("GET", "http://pilic27.irisa.fr/API/v2/donnees.php", false);
+	xhttp.open("GET", "http://pilic27.irisa.fr/API/v2/donnees.json", false);
 	
 	xhttp.onreadystatechange = function() {
 		if (this.readyState === XMLHttpRequest.DONE && this.status === 200) {
 			geojson = JSON.parse(this.responseText);
-			console.log(geojson);
+			loadMapLayers(geojson, map);
 		};
 	};
-	
-	
 	xhttp.send(); 
+}
+
+function loadMapLayers(geojson, map){
 	
 	/* coordonnées max de la map: 
 	 * float s = (float) -1.84;
@@ -27,22 +28,22 @@ function mapLayer(map) {
 	//PARTICULES LOURDES ONLY
 		
 	//var geojsonParticulesLourdes = geojson.features.filter(function(item){return item.properties.type=="particules";});
-			
+	
 	//debut graphics design
+	
+	
 	map.on('load', function(){
-		
 		//Add a geojson point source for fine particles
 		map.addSource('measureFines', {
 			type: 'geojson',
-			data: 'geojson',
+			data: geojson,
 		});
 		
 		//Add a geojson point source for heavy particles.
 		map.addSource('measureLourdes', {
 			type: 'geojson',
-			data: 'geojson',
+			data: geojson,
 		});
-		
 		
 		
 		//LAYER measure_dot_fines
