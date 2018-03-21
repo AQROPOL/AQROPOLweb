@@ -15,6 +15,8 @@ function mapLayer(map) {
 
 function loadMapLayers(geojson, map){
 	
+	//console.log("loool");
+	
 	/* coordonnées max de la map: 
 	 * float s = (float) -1.84;
 	 * float w = (float) 48.02;
@@ -28,6 +30,9 @@ function loadMapLayers(geojson, map){
 	//PARTICULES LOURDES ONLY
 		
 	//var geojsonParticulesLourdes = geojson.features.filter(function(item){return item.properties.type=="particules";});
+	
+	console.log(geojson.filter(function(item){return features.item.properties.type=="particules";}));
+	
 	
 	//debut graphics design
 	
