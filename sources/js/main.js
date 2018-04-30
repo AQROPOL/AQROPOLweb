@@ -33,9 +33,56 @@ function initialisationMap(){
 	
 	//alert("map initialisée");
 	
-	mapLayer(map);
-	
+	mapLayer(map, "http://pilic27.irisa.fr/API/v2/donnees.php?query=all");
 	mapToggleLayers(map);
 }
 
-
+function initialisationMapDate(){
+	
+	//alert("initialisation de la map");
+	
+	//element Map
+	var map = new mapboxgl.Map({
+	center: rennes,
+	maxBounds: rennesBounds,
+	
+	doubleClickZoom: true,
+	
+	pitch:40,
+	
+	container: 'map',
+	style: 'mapbox://styles/posnicantoine/cjd392dx5440k2rn21njte4jw'
+	});
+	
+	//alert("map initialisée");
+	var legendMeasure = document.getElementById('AllMeasure');
+	var legendHeatmap = document.getElementById('HeatMap');
+	legendMeasure.style.display='none';
+	legendHeatmap.style.display='block';
+	mapToggleLayersDate(map);
+	mapLayerDate(map);
+}
+function initialisationMapMonth(){
+	
+	//alert("initialisation de la map");
+	
+	//element Map
+	var map = new mapboxgl.Map({
+	center: rennes,
+	maxBounds: rennesBounds,
+	
+	doubleClickZoom: true,
+	
+	pitch:40,
+	
+	container: 'map',
+	style: 'mapbox://styles/posnicantoine/cjd392dx5440k2rn21njte4jw'
+	});
+	
+	//alert("map initialisée");
+	var date = new Date();
+	var month = date.getMonth() + 1;
+	var year = date.getFullYear();
+	mapLayer(map, "http://pilic27.irisa.fr/API/v2/donnees.php?query=filter&month="+month+"&year="+year);
+	mapToggleLayersDate(map);
+}

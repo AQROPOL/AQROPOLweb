@@ -17,6 +17,36 @@
 
 	<body>
 		<nav id ='menuLayers'></nav>
-		<div id='map' ><script src="sources/js/main.js" type="text/javascript" LANGUAGE="JavaScript"></script></div>
+		<div id='map' >
+			<div id='date'>
+				<p>Choisir une date</p>
+				<input id='dateinput' type="date" name="ChosenDate">
+				<script type="text/javascript" LANGUAGE="JavaScript">
+				</script>
+				<input id='buttonenvoie'type="submit" onClick="initialisationMapDate()">
+				<input id='buttonmonth' type="button" value ="Afficher les mesures du mois" onClick="initialisationMapMonth()">
+			</div>
+			<script src="sources/js/main.js" type="text/javascript" LANGUAGE="JavaScript"></script>
+		</div>
+		<div class='map-overlay top'>
+    <div id='AllMeasure' class='map-overlay-inner' style="display: none">
+        <div id='legendM' class='legendm'>
+            <div class='bar'>
+				<p class= 'min'>100</p>
+				<p class= 'max'>9999</p>
+            </div>
+            <div>Pollution (nbParticule/m²)</div>
+        </div>
+    </div>
+      <div id='HeatMap' class='map-overlay-inner'>
+        <div id='legendH' class='legendh'>
+            <div class='bar'>
+				<p class= 'min'>Non renseigné</p>
+				<p class= 'max'>9999</p>
+            </div>
+            <div>Pollution (nbParticule/m²)</div>
+        </div>
+    </div>
+</div>
 	</body>
 </html>

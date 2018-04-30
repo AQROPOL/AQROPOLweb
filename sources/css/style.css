@@ -22,6 +22,20 @@ body {
 }
 
 
+
+#date{
+	position: absolute;
+	z-index: 1;
+	top: 10px;
+	left: 0px;
+	width: 120px;
+	font-family: 'Open Sans', sans-serif;
+}
+#date p{
+	margin-bottom:0;
+}
+
+
 /*
  * MenuLayers
  * 
@@ -80,3 +94,72 @@ body {
 #menuLayers button.active:hover {
     filter: alpha(opacity=50); /* For IE8 and earlier */
 	background: #d9dbdb;
+}
+	
+.map-overlay {
+    font: 12px/20px 'Helvetica Neue', Arial, Helvetica, sans-serif;
+    position: absolute;
+    width: 25%;
+    bottom:20PX;
+    left: 0;
+    padding: 10px;
+}
+
+.map-overlay .map-overlay-inner #legendH {
+    background-color: rgba( 247,247,247,0.4);
+    box-shadow:0 1px 2px rgba(0, 0, 0, 0.20);
+    border-radius: 3px;
+    margin-bottom: 10px;
+}
+.map-overlay .map-overlay-inner #legendM {
+    background-color: rgba( 247,247,247,0.4);
+    box-shadow:0 1px 2px rgba(0, 0, 0, 0.20);
+    border-radius: 3px;
+    margin-bottom: 10px;
+}
+
+.map-overlay h2 {
+    line-height: 24px;
+    display: block;
+    margin: 0 0 10px;
+}
+
+.map-overlay .legendM .bar {
+    background: linear-gradient(to right, rgb(0, 255, 0), rgb(255, 0, 0));
+}
+
+
+.map-overlay .legendH .bar {
+    background: linear-gradient(to right, rgb(255, 255, 255), rgb(255, 0, 0));
+}
+
+.map-overlay .bar{
+    height: 10px;
+    width: 100%;
+    position: relative;
+}
+
+.bar+div{
+	margin-top: 16px;
+}
+
+.map-overlay .bar>p{
+	position: absolute;	
+}
+
+.min{
+	left:0;
+}
+
+.max{
+	right:0;
+}
+
+.map-overlay input {
+    background-color: transparent;
+    display: inline-block;
+    width: 100%;
+    position: relative;
+    margin: 0;
+    cursor: ew-resize;
+}
