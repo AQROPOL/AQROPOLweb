@@ -1,7 +1,7 @@
 //alert("creation var");
 
 //token mapBox
-mapboxgl.accessToken = 'pk.eyJ1IjoicG9zbmljYW50b2luZSIsImEiOiJjajk3MDJuN2swOW9tMzNxcXdvd3lhaDBhIn0.ZNR0Mp71bb6iZQtoawKL0w';
+mapboxgl.accessToken = '';//Insert here your mapbox token
 
 //center coord of the map
 var rennes = new mapboxgl.LngLat(-1.65, 48.11);
